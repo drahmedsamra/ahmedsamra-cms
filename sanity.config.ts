@@ -1,18 +1,23 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import {defineConfig} from "sanity";
+import {structureTool} from "sanity/structure";
+import {visionTool} from "@sanity/vision";
+import {schemaTypes} from "./schemaTypes";
 
 export default defineConfig({
-  name: 'default',
-  title: 'Ahmed Samra CMS',
+  name: "default",
+  title: "Ahmed Samra CMS",
 
-  projectId: 'flajunq1',
-  dataset: 'production',
+  projectId: "flajunq1",
+  dataset: "production",
 
-  plugins: [structureTool(), visionTool()],
+  basePath: "/",
+
+  plugins: [
+    structureTool(),
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,
   },
-})
+});
